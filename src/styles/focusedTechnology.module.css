@@ -1,0 +1,11 @@
+.technologyItems {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  background-color: white;
+  padding:20px;
+  border: 1px solid purple;
+  border-radius: 20px;
+}

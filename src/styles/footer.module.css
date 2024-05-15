@@ -1,0 +1,13 @@
+.footer {
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+    height: 70px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3f4045;
+    color: white; /* Text color */
+    font-size: 18px; /* Adjust font size as needed */
+    margin-top: 30px;
+}
