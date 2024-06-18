@@ -23,11 +23,12 @@ export default function SignInSide() {
   };
 
   return (
-    <Container component="main" maxWidth="lg">
+    <Container component="main" maxWidth="lg" sx={{height:"100vh"}}>
       <Box
         sx={{
          paddingTop:10,
-        
+         flex:'1',
+         display:'flex',    
         }}
       >
         <Grid container>
@@ -44,7 +45,7 @@ export default function SignInSide() {
                 alignItems: 'center',
               }}
             >
-              <Image src='/Login_Image.jpg' width={700} height={400} />
+              <Image src='/Login_Image.jpg' width={600} height={600} alt="Image"/>
               </Grid>
           )}
             
@@ -118,15 +119,15 @@ export default function SignInSide() {
                   variant="contained"
                   color="secondary"
                   size="small"
-                  sx={{ mt: 3, mb: 2, fontSize:'20px'}}
+                  sx={{ mt: 3, mb: 2, fontSize:'16px'}}
                 >
-                  Sign In
+                  Log In
                 </Button>
                <Box sx={{display:'flex',flexDirection:'column', justifyContent:'center',alignItems:'center',gap:'5px'}}>
                   <Link href="#">
                     Forget Password?
                   </Link>
-                  <Link href="#">
+                  <Link href="http://localhost:3000/Register">
                   Don't have an account? <span style={{color:'black'}} href="google.com"> Click here </span>
                   </Link>
                </Box>

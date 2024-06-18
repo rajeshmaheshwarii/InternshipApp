@@ -17,6 +17,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import CloseIcon from "@mui/icons-material/Close";
 import Style from "../../styles/header.module.css";
 import { Typography } from "@mui/material";
+import Image from "next/image";
 
 const Header = () => {
   const headermenu = ["Home", "Internships", "Login", "Register"];
@@ -45,12 +46,22 @@ const Header = () => {
       <Box>
         <Box className={Style.headerContainer}>
           <Box>
-            <Typography
+            {/* <Typography
               variant="h6"
               sx={{ fontFamily: "monospace", fontWeight: "700", color: "#fff" }}
             >
               Logo Here
-            </Typography>
+            </Typography> */}
+            <Image
+              src="/logo.png"
+              width={180} // Default width
+              height={40} // Let the height adjust proportionally
+              sx={{
+                width: { xs: 150, sm: 250, xl: 350 }, // Set width based on breakpoint
+                height: { xs: 30, sm: 40, xl: 50 }, // Set height based on breakpoint
+              }}
+              alt="Logo"
+            />
           </Box>
           <Box sx={{ display: "flex", gap: "30px" }}>
             {isMobile && (
@@ -59,13 +70,14 @@ const Header = () => {
             {!isMobile &&
               headermenu.map((menu, index) => (
                 <Typography
-                  variant="body1"
+                  variant="h6"
                   key={menu}
                   className={Style.menu}
                   onClick={() => handleMenuClick(Navigationpage[index])}
                 >
-                  {headermenuIcons[index]}
+                  
                   {menu}
+                  {headermenuIcons[index]}
                 </Typography>
               ))}
           </Box>
@@ -116,8 +128,11 @@ const Header = () => {
                 </Typography>
               ))}
             </Box>
+            <Box>
+              
+            </Box>
             <Box className={Style.MobileHeaderSocialContainer}>
-              <Typography variant="body1" sx={{ textAlign: "center" }}>
+              <Typography variant="body1" sx={{ textAlign: "center"  }}>
                 Follow us on
               </Typography>
               <Box
@@ -128,8 +143,8 @@ const Header = () => {
                   alignItems: "center",
                 }}
               >
-                <Link href="#" target="_blank">
-                  <XIcon sx={{ fontSize: "26px",color:'black' }} />
+                <Link href="https://www.x.com/" target="_blank">
+                  <XIcon sx={{ fontSize: "26px", color: "black" }} />
                 </Link>
                 <Link href="https://www.facebook.com/" target="_blank">
                   <FacebookIcon sx={{ fontSize: "30px" }} color="info" />
@@ -141,6 +156,7 @@ const Header = () => {
                   <InstagramIcon sx={{ fontSize: "30px" }} color="error" />
                 </Link>
               </Box>
+              
             </Box>
           </Box>
         </Drawer>

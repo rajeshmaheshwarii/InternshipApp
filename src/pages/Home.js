@@ -1,18 +1,26 @@
 import { Box, Button, Divider, Grid } from "@mui/material";
+import { Link } from "react-router-dom";
 import Image from "next/image";
 import React from "react";
 import { useMediaQuery } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Technology from "./Technology";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles({
   customFont: {
-    fontFamily: "DM Sans, sans-serif",
+    fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
   },
 });
 
+
 function Home() {
   const classes = useStyles();
+  const router = useRouter();
+
+  const handleExploreButtonClick = () => {
+    router.push('/Internships')
+  }
   const isSmallScreen = useMediaQuery("(max-width:600px)");
   return (
     <>
@@ -22,25 +30,41 @@ function Home() {
           // display: "flex",
           // justifyContent: "center",
           // alignItems: "center",
-          paddingTop:'60px'
-          
+          paddingTop: "60px",
         }}
       >
-        <Grid container sx={{ marginTop: isSmallScreen ? '2rem' : '10rem', paddingBottom: "20px"}}>
+        <Grid
+          container
+          sx={{
+            marginTop: isSmallScreen ? "2rem" : "10rem",
+            paddingBottom: "20px",
+          }}
+        >
           <Grid item sm={6} xs={12} sx={{ padding: "20px 30px" }}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-            <Box sx={{ fontSize: isSmallScreen ? '24px' : '40px' }}>
-
+              <Box sx={{ fontSize: isSmallScreen ? "24px" : "40px" }}>
                 <h3
                   className={classes.customFont}
                   style={{ letterSpacing: "1px" }}
                 >
-                  Exploring Internship Options?<span style={{color:'red'}}>{!isSmallScreen && <br/>} Start </span> Here!
+                  Exploring Internship Options?
+                  <span style={{ color: "red" }}>
+                    {!isSmallScreen && <br />} Start{" "}
+                  </span>{" "}
+                  Here!
                 </h3>
               </Box>
               <Divider />
-              <Box sx={{ fontSize: isSmallScreen ? '20px' : '24px' , fontFamily: "sans-serif" }}>
-                <p className={classes.customFont} style={{lineHeight : isSmallScreen ? '22px' : '28px'}}>
+              <Box
+                sx={{
+                  fontSize: isSmallScreen ? "20px" : "24px",
+                  fontFamily: "sans-serif",
+                }}
+              >
+                <p
+                  className={classes.customFont}
+                  style={{ lineHeight: isSmallScreen ? "22px" : "28px" }}
+                >
                   Join our competitive internship program and gain real-world
                   experience in your field. Work alongside industry
                   professionals, develop your skills, and make valuable
@@ -49,7 +73,12 @@ function Home() {
                 </p>
               </Box>
               <Box>
-                <Button variant="contained" color="secondary" size="large">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  size="large"
+                  onClick={handleExploreButtonClick}
+                >
                   Explore Now
                 </Button>
               </Box>
@@ -69,8 +98,9 @@ function Home() {
             <Box>
               <Image
                 src="/Home_Page_Banner.jpg"
-                width={isSmallScreen ? 330 : 500}
-                height={350}
+                width={isSmallScreen ? 330 : 450}
+                height={400}
+                alt="Homepage banner"
               />
             </Box>
             <Box
@@ -87,9 +117,8 @@ function Home() {
       {/* offred Technologies */}
 
       <Box sx={{ padding: "20px 30px" }}>
-        <Technology/>
+        <Technology />
       </Box>
-
     </>
   );
 }
