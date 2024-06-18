@@ -13,7 +13,7 @@
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.17",
     "@mui/material": "^5.15.17",
-    "@mui/styles": "^5.2.0",
+    "@mui/styles": "^5.15.17",
     "next": "14.2.3",
     "next-images": "^1.8.5",
     "react": "^18",
